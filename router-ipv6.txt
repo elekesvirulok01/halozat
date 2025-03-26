@@ -1,0 +1,25 @@
+ena
+conf t
+hostname R1
+ip domai-name cisco.hu
+no ip domain-lookup
+enable secret cisco
+username admin password admin
+banner motd #Figyelmeztetlek illetektelen belepo!!!#
+line con 0
+password cisco
+logging synchronous
+login local
+exit
+line vty 0 15
+password cisco
+logging synchronous
+login local
+exit
+crypto key generate rsa
+4096
+ip ssh version 2
+
+
+
+
