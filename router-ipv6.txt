@@ -1,17 +1,19 @@
+R1 (IPv6)
+
 ena
 conf t
 hostname R1
-ip domai-name cisco.hu
+ip domai-name halozat.hu
 no ip domain-lookup
-enable secret cisco
-username admin password admin
+enable secret Becsuletesjelszo12!
+username Urleny12 password cseszehajo
 banner motd #Figyelmeztetlek illetektelen belepo!!!#
 line con 0
 password cisco
 logging synchronous
 login local
 exit
-line vty 0 15
+line vty 0 4
 password cisco
 logging synchronous
 login local
@@ -19,7 +21,101 @@ exit
 crypto key generate rsa
 4096
 ip ssh version 2
+service password-encryption
+
+int g0/0/0
+ip add 192.168.1.193 255.255.255.0
+no sh
+exit
+int Se0/1/0
+ip add 1.1.1.2 255.255.255.252
+no sh
+exit
+ip route 0.0.0.0 0.0.0.0 1.1.1.1
+
+int g0/0/0
+ip address 192.168.1.193 255.255.255.0
+standby 1 ip 192.168.1.192
+standby priority 150
+standby 1 preempt
+exit
 
 
 
+R2 (backup)
 
+ena
+conf t
+hostname R2
+ip domai-name halozat.hu
+no ip domain-lookup
+enable secret Becsuletesjelszo12!
+username Urleny12 password cseszehajo
+banner motd #Figyelmeztetlek illetektelen belepo!!!#
+line con 0
+password cisco
+logging synchronous
+login local
+exit
+line vty 0 4
+password cisco
+logging synchronous
+login local
+exit
+crypto key generate rsa
+4096
+ip ssh version 2
+service password-encryption
+
+int g0/0/0
+ip add 192.168.1.194 255.255.255.0
+no sh
+int Se0/1/1
+ip add 2.2.2.2 255.255.255.252
+no sh
+exit
+ip route 0.0.0.0 0.0.0.0 1.1.1.1
+
+int g0/0/0
+ip address 192.168.1.194 255.255.255.0
+standby 1 ip 192.168.1.192
+standby priority 100
+standby 1 preempt
+exit
+
+
+
+R3 (IPv4)
+
+ena
+conf t
+hostname R3
+ip domai-name halozat.hu
+no ip domain-lookup
+enable secret Becsuletesjelszo12!
+username Urleny12 password cseszehajo
+banner motd #Figyelmeztetlek illetektelen belepo!!!#
+line con 0
+password cisco
+logging synchronous
+login local
+exit
+line vty 0 4
+password cisco
+logging synchronous
+login local
+exit
+crypto key generate rsa
+4096
+ip ssh version 2
+service password-encryption
+
+int Se0/1/0
+ip add 1.1.1.1 255.255.255.252
+no sh
+exit
+
+int Se0/1/1
+ip add 2.2.2.1 255.255.255.252
+no sh
+ip route 0.0.0.0 0.0.0.0 2.2.2.2
