@@ -1,0 +1,28 @@
+en
+conf t
+h R1
+no ip domain-lookup
+ena secret cisco
+user admin pass admin
+ip domain-name halozat.hu
+service password-encryption
+banner motd "Belepes csak engedellyel!!!"
+line con 0
+pass cisco
+logging synchronous
+exit
+line vty 0 4
+pass cisco
+login local
+logging synchronous
+exit
+crypto key generate rsa
+4096
+ip ssh version 2
+
+
+----------------------------------------------------------------------------
+ena secret: Becsuletesjelszo12!
+user: Urleny12 pass: cseszehajo
+domain-name: halozat.hu
+line pass: cisco
