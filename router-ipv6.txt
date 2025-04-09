@@ -24,98 +24,70 @@ ip ssh version 2
 service password-encryption
 
 int g0/0/0
-ip add 192.168.1.193 255.255.255.0
+ipv6 address 2001:db8:acad:0:c000::/120
+ipv6 address fe80::1 link-local
 no sh
 exit
-int Se0/1/0
-ip add 1.1.1.2 255.255.255.252
-no sh
-exit
-ip route 0.0.0.0 0.0.0.0 1.1.1.1
-
-int g0/0/0
-ip address 192.168.1.193 255.255.255.0
-standby 1 ip 192.168.1.192
-standby priority 150
-standby 1 preempt
-exit
-
-
-
-R2 (backup)
-
-ena
-conf t
-hostname R2
-ip domai-name halozat.hu
-no ip domain-lookup
-enable secret Becsuletesjelszo12!
-username Urleny12 password cseszehajo
-banner motd #Figyelmeztetlek illetektelen belepo!!!#
-line con 0
-password cisco
-logging synchronous
-login local
-exit
-line vty 0 4
-password cisco
-logging synchronous
-login local
-exit
-crypto key generate rsa
-4096
-ip ssh version 2
-service password-encryption
-
-int g0/0/0
-ip add 192.168.1.194 255.255.255.0
-no sh
-int Se0/1/1
-ip add 2.2.2.2 255.255.255.252
-no sh
-exit
-ip route 0.0.0.0 0.0.0.0 1.1.1.1
-
-int g0/0/0
-ip address 192.168.1.194 255.255.255.0
-standby 1 ip 192.168.1.192
-standby priority 100
-standby 1 preempt
-exit
-
-
-
-R3 (IPv4)
-
-ena
-conf t
-hostname R3
-ip domai-name halozat.hu
-no ip domain-lookup
-enable secret Becsuletesjelszo12!
-username Urleny12 password cseszehajo
-banner motd #Figyelmeztetlek illetektelen belepo!!!#
-line con 0
-password cisco
-logging synchronous
-login local
-exit
-line vty 0 4
-password cisco
-logging synchronous
-login local
-exit
-crypto key generate rsa
-4096
-ip ssh version 2
-service password-encryption
-
-int Se0/1/0
-ip add 1.1.1.1 255.255.255.252
+int g0/0/1
+ipv6 address 2001:db8:acad:0:c001::/120
+ipv6 address fe80::1 link-local
 no sh
 exit
 
-int Se0/1/1
-ip add 2.2.2.1 255.255.255.252
-no sh
-ip route 0.0.0.0 0.0.0.0 2.2.2.2
+ipv6 dhcp pool GEPTEREM1
+dns-server 2001:db8:acad:0:1000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM2
+dns-server 2001:db8:acad:0:2000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM3
+dns-server 2001:db8:acad:0:3000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM4
+dns-server 2001:db8:acad:0:4000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM5
+dns-server 2001:db8:acad:0:5000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM6
+dns-server 2001:db8:acad:0:6000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM7
+dns-server 2001:db8:acad:0:7000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM8
+dns-server 2001:db8:acad:0:8000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM9
+dns-server 2001:db8:acad:0:1000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool GEPTEREM10
+dns-server 2001:db8:acad:0:a000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool AP
+dns-server 2001:db8:acad:0:b000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool ESZKOZOK
+dns-server 2001:db8:acad:0:c000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool ELOADO
+dns-server 2001:db8:acad:0:d000::
+domain-name halozat.com
+exit
+ipv6 dhcp pool Tanari
+dns-server 2001:db8:acad:0:e000::
+domain-name halozat.com
+exit
+
