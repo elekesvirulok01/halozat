@@ -23,71 +23,183 @@ crypto key generate rsa
 ip ssh version 2
 service password-encryption
 
-int g0/0/0
-ipv6 address 2001:db8:acad:0:c000::/120
-ipv6 address fe80::1 link-local
-no sh
-exit
-int g0/0/1
-ipv6 address 2001:db8:acad:0:c001::/120
-ipv6 address fe80::1 link-local
-no sh
-exit
+ipv6 unicast-routing
+
+interface g0/0/0
+no shutdown
+
+interface g0/0/0.1
+encapsulation dot1q 1
+ipv6 address 2001:db8:acad:0:1000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM1
+no shutdown
+
+interface g0/0/0.2
+encapsulation dot1q 2
+ipv6 address 2001:db8:acad:0:2000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM2
+no shutdown
+
+interface g0/0/0.3
+encapsulation dot1q 3
+ipv6 address 2001:db8:acad:0:3000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM3
+no shutdown
+
+interface g0/0/0.4
+encapsulation dot1q 4
+ipv6 address 2001:db8:acad:0:4000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM4
+no shutdown
+
+interface g0/0/0.5
+encapsulation dot1q 5
+ipv6 address 2001:db8:acad:0:5000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM5
+no shutdown
+
+interface g0/0/0.6
+encapsulation dot1q 6
+ipv6 address 2001:db8:acad:0:6000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM6
+no shutdown
+
+interface g0/0/0.7
+encapsulation dot1q 7
+ipv6 address 2001:db8:acad:0:7000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM7
+no shutdown
+
+interface g0/0/0.8
+encapsulation dot1q 8
+ipv6 address 2001:db8:acad:0:8000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM8
+no shutdown
+
+interface g0/0/0.9
+encapsulation dot1q 9
+ipv6 address 2001:db8:acad:0:9000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM9
+no shutdown
+
+interface g0/0/0.10
+encapsulation dot1q 10
+ipv6 address 2001:db8:acad:0:a000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server GEPTEREM10
+no shutdown
+
+interface g0/0/0.20
+encapsulation dot1q 20
+ipv6 address 2001:db8:acad:0:b000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server AP
+standby version 2
+standby 1 ipv6 2001:db8:acad:0:b000::ff
+standby 1 priority 110
+standby 1 preempt
+no shutdown
+
+interface g0/0/0.30
+encapsulation dot1q 30
+ipv6 address 2001:db8:acad:0:c000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server ESZKOZOK
+no shutdown
+
+interface g0/0/0.50
+encapsulation dot1q 50
+ipv6 address 2001:db8:acad:0:e000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server TANARI
+no shutdown
+
+interface g0/0/0.40
+encapsulation dot1q 40
+ipv6 address 2001:db8:acad:0:d000::1/120
+ipv6 nd managed-config-flag
+ipv6 dhcp server ELOADO
+no shutdown
 
 ipv6 dhcp pool GEPTEREM1
-dns-server 2001:db8:acad:0:1000::
+address prefix 2001:db8:acad:0:1000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM2
-dns-server 2001:db8:acad:0:2000::
+address prefix 2001:db8:acad:0:2000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM3
-dns-server 2001:db8:acad:0:3000::
+address prefix 2001:db8:acad:0:3000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM4
-dns-server 2001:db8:acad:0:4000::
+address prefix 2001:db8:acad:0:4000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM5
-dns-server 2001:db8:acad:0:5000::
+address prefix 2001:db8:acad:0:5000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM6
-dns-server 2001:db8:acad:0:6000::
+address prefix 2001:db8:acad:0:6000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM7
-dns-server 2001:db8:acad:0:7000::
+address prefix 2001:db8:acad:0:7000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM8
-dns-server 2001:db8:acad:0:8000::
+address prefix 2001:db8:acad:0:8000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM9
-dns-server 2001:db8:acad:0:1000::
+address prefix 2001:db8:acad:0:9000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool GEPTEREM10
-dns-server 2001:db8:acad:0:a000::
+address prefix 2001:db8:acad:0:a000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool AP
-dns-server 2001:db8:acad:0:b000::
+address prefix 2001:db8:acad:0:b000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool ESZKOZOK
-dns-server 2001:db8:acad:0:c000::
+address prefix 2001:db8:acad:0:c000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 ipv6 dhcp pool ELOADO
-dns-server 2001:db8:acad:0:d000::
+address prefix 2001:db8:acad:0:d000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
-ipv6 dhcp pool Tanari
-dns-server 2001:db8:acad:0:e000::
+ipv6 dhcp pool TANARI
+address prefix 2001:db8:acad:0:e000::/120
+dns-server 2001:db8:acad:0:c000::1
 domain-name halozat.com
 exit
 
+exit
+copy run start
