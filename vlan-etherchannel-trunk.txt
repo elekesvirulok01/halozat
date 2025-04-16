@@ -1,0 +1,369 @@
+S1:
+int range f0/3-22
+switchport mode access
+switchport access vlan 1
+exit
+int range f0/1-2
+channel-group 1 mode active
+int port-channel 1
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S3:
+int range f0/3-22
+switchport mode access
+switchport access vlan 2
+exit
+int range f0/1-2
+channel-group 2 mode active
+int port-channel 2
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 3 mode active
+int port-channel 3
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S5:
+int range f0/3-22
+switchport mode access
+switchport access vlan 3
+exit
+int range f0/1-2
+channel-group 4 mode active
+int port-channel 4
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 5 mode active
+int port-channel 5
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S7:
+int range f0/3-22
+switchport mode access
+switchport access vlan 4
+exit
+int range f0/1-2
+channel-group 6 mode active
+int port-channel 6
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 7 mode active
+int port-channel 7
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S9:
+int range f0/3-22
+switchport mode access
+switchport access vlan 5
+exit
+int range f0/1-2
+channel-group 8 mode active
+int port-channel 8
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 9 mode active
+int port-channel 9
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S11:
+int range f0/3-22
+switchport mode access
+switchport access vlan 6
+exit
+int range f0/1-2
+channel-group 10 mode active
+int port-channel 10
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 11 mode active
+int port-channel 11
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S13:
+int range f0/3-22
+switchport mode access
+switchport access vlan 7
+exit
+int range f0/1-2
+channel-group 12 mode active
+int port-channel 12
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 13 mode active
+int port-channel 13
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S15:
+int range f0/3-22
+switchport mode access
+switchport access vlan 8
+exit
+int range f0/1-2
+channel-group 14 mode active
+int port-channel 14
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 15 mode active
+int port-channel 15
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S17:
+int range f0/3-22
+switchport mode access
+switchport access vlan 9
+exit
+int range f0/1-2
+channel-group 16 mode active
+int port-channel 16
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 17 mode active
+int port-channel 17
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S19:
+int range f0/3-22
+switchport mode access
+switchport access vlan 10
+exit
+int range f0/1-2
+channel-group 18 mode active
+int port-channel 18
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 19 mode active
+int port-channel 19
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+
+------------------------------------------------------------
+S2-4-6-8-10-12-14-16-18-20: 
+int range f0/3-5
+switchport mode access
+switchport access vlan 20
+exit
+int range f0/6-7
+switchport mode access
+switchport access vlan 40
+exit
+int range f0/8-11
+switchport mode access
+switchport access vlan 50
+exit
+
+S2!!!!!!!!!!!!!!
+int range f0/1-2
+channel-group 1 mode active
+int port-channel 1
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 2 mode active
+int port-channel 2
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S4!!!!!!!!!!
+int range f0/1-2
+channel-group 3 mode active
+int port-channel 3
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 4 mode active
+int port-channel 4
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+
+S6:
+int range f0/1-2
+channel-group 5 mode active
+int port-channel 5
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 6 mode active
+int port-channel 6
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S8:
+int range f0/1-2
+channel-group 7 mode active
+int port-channel 7
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 8 mode active
+int port-channel 8
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S10:
+int range f0/1-2
+channel-group 9 mode active
+int port-channel 9
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 10 mode active
+int port-channel 10
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S12:
+int range f0/1-2
+channel-group 11 mode active
+int port-channel 11
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 12 mode active
+int port-channel 12
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S14:
+int range f0/1-2
+channel-group 13 mode active
+int port-channel 13
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 14 mode active
+int port-channel 14
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S16:
+int range f0/1-2
+channel-group 15 mode active
+int port-channel 15
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 16 mode active
+int port-channel 16
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S18:
+int range f0/1-2
+channel-group 17 mode active
+int port-channel 17
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 18 mode active
+int port-channel 18
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+
+S20:
+int range f0/1-2
+channel-group 19 mode active
+int port-channel 19
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
+int range f0/23-24
+channel-group 20 mode active
+int port-channel 20
+switchport mode trunk
+switchport trunk allowed vlan 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 13
+switchport trunk native vlan 999
+exit
