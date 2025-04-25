@@ -103,10 +103,6 @@ encapsulation dot1q 20
 ipv6 address 2001:db8:acad:0:b000::1/120
 ipv6 nd managed-config-flag
 ipv6 dhcp server AP
-standby version 2
-standby 1 ipv6 2001:db8:acad:0:b000::ff
-standby 1 priority 110
-standby 1 preempt
 no shutdown
 
 interface g0/0/0.30
@@ -129,6 +125,8 @@ ipv6 address 2001:db8:acad:0:d000::1/120
 ipv6 nd managed-config-flag
 ipv6 dhcp server ELOADO
 no shutdown
+
+
 
 ipv6 dhcp pool GEPTEREM1
 address prefix 2001:db8:acad:0:1000::/120
